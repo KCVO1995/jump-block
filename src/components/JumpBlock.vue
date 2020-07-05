@@ -15,19 +15,21 @@
   @Component
   export default class HelloWorld extends Vue {
     currentCount = '';
-    row = 3;
-    col = 3;
-    duration = 1000;
-    changeBackground = true;
-    defaultBackground = 'white';
-    colorRange_R = [0, 100];
-    colorRange_G = [0, 100];
-    colorRange_B = [0, 100];
-    numberRange = [1, 100];
-    stringRange = [19960, 20901];
-    contentType = 'string';
-    fontSize = 28;
-    gap = 2;
+    // 配置项如下
+    row = 3; // 每行 item 个数
+    col = 3; // 行数
+    duration = 500; // 跳跃时间间隔
+    changeBackground = true; // 是否开启背景颜色变换
+    defaultBackground = 'white'; // 不开启背景颜色变换，使用的默认颜色
+    colorRange_R = [0, 100]; // RGB R 的颜色范围
+    colorRange_G = [0, 100]; // RGB G 的颜色范围
+    colorRange_B = [0, 100]; // RGB B 的颜色范围
+    numberRange = [1, 100]; // 跳体数字区间
+    stringRange = [19960, 20901]; // 跳体文字区间
+    contentType = 'string'; // 跳体显示文字或数字
+    fontSize = 28; // 跳体文字大小
+    color = 'white'; // 跳体文字颜色
+    gap = 2; // 内格的间距
 
     get total() {
       return this.row * this.col;
@@ -85,6 +87,7 @@
       JumpBlock.style.width = this.shortSide + 'px';
       JumpBlock.style.height = this.shortSide + 'px';
       JumpBlock.style.fontSize = this.fontSize + 'px';
+      JumpBlock.style.color = this.color;
       JumpBlock.style.background = this.changeBackground ? this.getColor() : this.defaultBackground;
       return JumpBlock;
     }
