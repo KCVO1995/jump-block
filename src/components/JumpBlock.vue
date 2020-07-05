@@ -2,8 +2,7 @@
   <div class="global">
     <div class="container">
       <div v-for="colCount in col" :key="colCount" class="col-item" :style="{marginBottom: gap + 'px'}">
-        <div v-for="rowCount in row" :key="rowCount" class="row-item"
-             :id="(colCount - 1) * row + rowCount" :style="{marginRight: gap + 'px'}" />
+        <div v-for="rowCount in row" :key="rowCount" class="row-item" :id="(colCount - 1) * row + rowCount" :style="{marginRight: gap + 'px'}" ></div>
       </div>
     </div>
   </div>
